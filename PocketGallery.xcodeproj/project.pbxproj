@@ -94,6 +94,10 @@
 		ABCE13432D3A13BC00A224C6 /* PocketGallery */ = {
 			isa = PBXGroup;
 			children = (
+				ABCE136E2D3ADAE400A224C6 /* App */,
+				ABCE13702D3ADB0100A224C6 /* Core */,
+				ABCE13712D3ADB1000A224C6 /* Features */,
+				ABCE13722D3ADB1600A224C6 /* Shared */,
 				ABCE13442D3A13BC00A224C6 /* PocketGalleryApp.swift */,
 				ABCE13462D3A13BC00A224C6 /* ContentView.swift */,
 				ABCE13482D3A13BF00A224C6 /* Assets.xcassets */,
@@ -125,6 +129,106 @@
 				ABCE13612D3A13BF00A224C6 /* PocketGalleryUITestsLaunchTests.swift */,
 			);
 			path = PocketGalleryUITests;
+			sourceTree = "<group>";
+		};
+		ABCE136E2D3ADAE400A224C6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		ABCE13702D3ADB0100A224C6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE13732D3ADB2D00A224C6 /* Model */,
+				ABCE13742D3ADB3100A224C6 /* ViewModel */,
+				ABCE13752D3ADB3B00A224C6 /* Service */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ABCE13712D3ADB1000A224C6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE13762D3ADB5C00A224C6 /* Auth */,
+				ABCE13772D3ADB6100A224C6 /* Browse */,
+				ABCE13782D3ADB7500A224C6 /* Favorites */,
+				ABCE13792D3ADB7A00A224C6 /* Search */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		ABCE13722D3ADB1600A224C6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE137B2D3ADBA900A224C6 /* Components */,
+				ABCE137A2D3ADB9600A224C6 /* Style */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		ABCE13732D3ADB2D00A224C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABCE13742D3ADB3100A224C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABCE13752D3ADB3B00A224C6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		ABCE13762D3ADB5C00A224C6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ABCE13772D3ADB6100A224C6 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		ABCE13782D3ADB7500A224C6 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		ABCE13792D3ADB7A00A224C6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		ABCE137A2D3ADB9600A224C6 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		ABCE137B2D3ADBA900A224C6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
