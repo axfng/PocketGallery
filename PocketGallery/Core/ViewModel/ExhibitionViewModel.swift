@@ -21,7 +21,7 @@ class ExhibitionViewModel: ObservableObject {
     func loadExhibitions() {
         cancellable = service.fetchExhibitions()
             .map { response in
-                response.records.filter { $0.htmldescription != nil }
+                response.records.filter { $0.description != nil }
             }
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in

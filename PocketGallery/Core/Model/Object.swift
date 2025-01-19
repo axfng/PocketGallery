@@ -14,10 +14,30 @@ struct ObjectResponse: Decodable {
 struct Object: Decodable {
     let id: Int
     let description: String?
-    let medium: String
+    let medium: String?
     let title: String
     let dateend: Int
-    let people: [Person]
+    let people: [Person]?
+    
+    var exhibitionId: Int
+    var isLiked: Bool = false
+    
+    enum CodingKeys: String, CodingKey {
+        case id, description, medium, title, dateend, people
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        description = try container.decodeIfPresent(String.self, forKey: .description)
+        medium = try container.decode(String.self, forKey: .medium)
+        title = try container.decode(String.self, forKey: .title)
+        dateend = try container.decode(Int.self, forKey: .dateend)
+        people = try container.decode([Person].self, forKey: .people)
+
+        exhibitionId = -1
+        isLiked = false
+    }
 }
 
 struct Person: Decodable {
