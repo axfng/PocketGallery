@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct BrowseView: View {
+    @Binding var isSignedIn: Bool
+    
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var exhibitionViewModel: ExhibitionViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            HStack {
+                Text("Handmade by Heels")
+                    .font(.title).bold()
+                NavigationLink {
+//                    ProfileView(isSignedIn: $isSignedIn)
+                } label: {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 22, height: 22)
+                        .foregroundStyle(Color(red: 75/255, green: 156/255, blue: 211/255))
+                }
+            }
+            ScrollView {
+                ForEach(exhibitionViewModel.exhibitions, id: \.id) { product in
+                    Text(product.title)
+                }
+                .padding(.horizontal, 15)
+            }
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    BrowseView()
+    BrowseView(isSignedIn: .constant(true))
+        .environmentObject(AuthViewModel())
+        .environmentObject(ExhibitionViewModel())
 }

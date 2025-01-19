@@ -13,7 +13,8 @@ struct RootView: View {
     @State private var isSignedIn: Bool
     @State private var userID: String
     
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var exhibitionViewModel: ExhibitionViewModel
     
     init() {
         _isSignedIn = State(initialValue: Auth.auth().currentUser != nil)
@@ -32,6 +33,8 @@ struct RootView: View {
             } else {
                 if isSignedIn {
                     MainTabView(isSignedIn: $isSignedIn, userId: $userID)
+                        .environmentObject(exhibitionViewModel)
+                        .environmentObject(authViewModel)
                 } else {
                     LoginView(isSignedIn: $isSignedIn)
                 }
@@ -50,4 +53,6 @@ struct RootView: View {
 
 #Preview {
     RootView()
+        .environmentObject(AuthViewModel())
+        .environmentObject(ExhibitionViewModel())
 }

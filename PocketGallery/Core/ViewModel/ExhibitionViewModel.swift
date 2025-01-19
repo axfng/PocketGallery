@@ -13,8 +13,9 @@ class ExhibitionViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     private let service: ExhibitionService
 
-    init(service: ExhibitionService) {
-        self.service = service
+    init() {
+        self.service = ExhibitionService()
+        loadExhibitions()
     }
 
     func loadExhibitions() {

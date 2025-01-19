@@ -11,6 +11,7 @@ import FirebaseCore
 @main
 struct PocketGalleryApp: App {
     @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var exhibitionViewModel = ExhibitionViewModel()
 
     init() {
         FirebaseApp.configure()
@@ -20,6 +21,7 @@ struct PocketGalleryApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(authViewModel)
+                .environmentObject(exhibitionViewModel)
         }
     }
 }

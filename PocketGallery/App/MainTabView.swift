@@ -15,9 +15,9 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            BrowseView()
+            BrowseView(isSignedIn: $isSignedIn)
                 .tabItem {
-                    Label("Home", systemImage: "photo.artframe")
+                    Label("Browse", systemImage: "photo.artframe")
                 }
             FavoritesView()
                 .tabItem {
